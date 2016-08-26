@@ -1,13 +1,30 @@
 # Examples
 
-## Plotting the Mandelbrot set in greyscale:
-The full command
+**Ex1: Plotting (and saving) the Mandelbrot set in greyscale**
 
-``>>> mplot(samples=1024, n_iter=256,  region=None, p=0, colormap='Greys', savefig=False)``
+The full command
+``>>> mplot(samples=512, n_iter=64,  region=None, p=0, colormap='Blues', savefig=True)``
 
 Or, more simply
-
-``>>> mplot()``
+``>>> mplot(savefig=True)``
 
 With a little bit of blur:
-``>>> mplot(p=0.001)``
+``>>> mplot(savefig=True, p=0.001)``
+
+**Ex2: Zoom over a region of the Mandelbrot set**
+
+Here we do a zoom over the region given by ``[xmin, xmax, ymin, ymax] = [0.25, 0.35, -0.05, 0.05]``.
+For this, we first define the region ``r`` and give it as an argument to the ``mplot`` function:
+
+```
+>>> r = [0.25, 0.35, -0.05, 0.05]
+>>> mplot(savefig=True, region=r)
+```
+
+If we want a better definition for our picture we can increment the number of iterations. We can 
+change the color map as well.
+
+```
+>>> r = [0.25, 0.35, -0.05, 0.05]
+>>> mplot(savefig=True, region=r, n_iter=128, colormap='Reds')
+```
