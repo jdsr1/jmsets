@@ -1,6 +1,6 @@
 # Examples
 
-**Ex1: Plotting (and saving) the Mandelbrot set in greyscale**
+**Ex1: Plotting (and saving) the Mandelbrot set in blues**
 
 The full command
 ``>>> mplot(samples=512, n_iter=64,  region=None, p=0, colormap='Blues', savefig=True)``
