@@ -7,9 +7,11 @@ The full command
 
 Or, more simply
 ``>>> mplot(savefig=True)``
+![Example 1a](https://i.imgsafe.org/0d52c6399a.png)
 
 With a little bit of blur:
 ``>>> mplot(savefig=True, p=0.001)``
+![Example 1b](https://i.imgsafe.org/0d5301b825.png)
 
 **Ex2: Zoom over a region of the Mandelbrot set**
 
@@ -20,6 +22,7 @@ For this, we first define the region ``r`` and give it as an argument to the ``m
 >>> r = [0.25, 0.35, -0.05, 0.05]
 >>> mplot(savefig=True, region=r)
 ```
+![Example 2a](https://i.imgsafe.org/0d5304543a.png)
 
 If we want a better definition for our picture we can increment the number of iterations. We can 
 change the color map as well.
@@ -28,3 +31,4 @@ change the color map as well.
 >>> r = [0.25, 0.35, -0.05, 0.05]
 >>> mplot(savefig=True, region=r, n_iter=128, colormap='Reds')
 ```
+![Example 2b](https://i.imgsafe.org/0d531261c8.png)
