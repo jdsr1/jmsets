@@ -32,3 +32,18 @@ change the color map as well.
 >>> mplot(savefig=True, region=r, n_iter=128, colormap='Reds')
 ```
 ![Example 2b](https://i.imgsafe.org/0d531261c8.png)
+
+**Ex3: Using the ``main_cardiod`` function to generate a random Julia parameter**
+
+The next code generates 4 random complex numbers and plugs them into the ``jplot`` function. 
+It saves each figure as a 250x250 pixels PNG file.
+
+```
+for iter in range(4):
+  a = random.uniform(-2,2)
+  c = main_cardioid(a)
+  jplot(c, samples=1024, savefig=True, size=[2.5,2.5], colormap='prism')
+```
+![Example 3a](https://i.imgsafe.org/0db1989d4c.png) ![Example 3b](https://i.imgsafe.org/0db19e95e3.png)
+
+![Example 3c](https://i.imgsafe.org/0db1a99792.png) ![Example 3d](https://i.imgsafe.org/0db1b82f89.png)
