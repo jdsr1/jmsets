@@ -49,6 +49,7 @@ for iter in range(4):
 ![Example 3c](https://i.imgsafe.org/0db1a99792.png) ![Example 3d](https://i.imgsafe.org/0db1b82f89.png)
 
 **Ex4: Incrementing the number of iterations to get a more detailed picture**
+
 In this example we use 7*pi/4 as argument to the main cardioid function. The resulting Julia set is shown here, with
 128, 256, 512 and 1024 iterations respectively.
 
