@@ -16,7 +16,7 @@ With a little bit of blur:
 **Ex2: Zoom over a region of the Mandelbrot set**
 
 Here we do a zoom over the region given by ``[xmin, xmax, ymin, ymax] = [0.25, 0.35, -0.05, 0.05]``.
-For this, we first define the region ``r`` and give it as an argument to the ``mplot`` function:
+For this, we first define the region ``r`` then give it as an argument to the ``mplot`` function:
 
 ```
 >>> r = [0.25, 0.35, -0.05, 0.05]
@@ -47,3 +47,15 @@ for iter in range(4):
 ![Example 3a](https://i.imgsafe.org/0db1989d4c.png) ![Example 3b](https://i.imgsafe.org/0db19e95e3.png)
 
 ![Example 3c](https://i.imgsafe.org/0db1a99792.png) ![Example 3d](https://i.imgsafe.org/0db1b82f89.png)
+
+**Ex4: Incrementing the number of iterations to get a more detailed picture**
+In this example we use 7*pi/4 as argument to the main cardioid function. The resulting Julia set is shown here, with
+128, 256, 512 and 1024 iterations respectively.
+
+![Example 4a](https://i.imgsafe.org/20223c82f4.png)
+
+![Example 4b](https://i.imgsafe.org/20224ed0e1.png)
+
+![Example 4c](https://i.imgsafe.org/20226b45cc.png)
+
+![Example 4d](https://i.imgsafe.org/20228be55e.png)
