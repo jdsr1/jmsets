@@ -148,7 +148,7 @@ all possible ways (samples^2).
 # The real plotting functions --------------------------------------------------
 
 def jplot(jparam, samples=512, n_iter=MAXITER, region=None, p=0, colormap='Blues',
-          savefig=False, size=[6,6]):
+          savefig=False):
     # Measuring time
     t1 = time.time()
     Z, limits = jset(jparam, samples, n_iter, region, p)
@@ -160,10 +160,12 @@ def jplot(jparam, samples=512, n_iter=MAXITER, region=None, p=0, colormap='Blues
     # Graphic setup
     if savefig == True:
         sq = samples**2
-        name = 'julia_%d.png' % random.random()*1e4
+        suffix = random.randint(0,1e4)
+        name = 'julia_%d.png' % suffix
 
     # Actually plotting   
     plt.figure()
+    size = [samples/100.]*2
     plt.gcf().set_size_inches(size)
     plt.setp(plt.gca(), xticks=[], yticks=[])
     plt.imshow(Z, origin='lower', cmap=colormap, extent=limits)
@@ -174,7 +176,7 @@ def jplot(jparam, samples=512, n_iter=MAXITER, region=None, p=0, colormap='Blues
     else: plt.show()
 
 def mplot(samples=512, n_iter=MAXITER, region=None, p=0, colormap='Blues',
-          savefig=False, size=[6,6]):
+          savefig=False):
     # Measuring time
     t1 = time.time()
     Z, limits = mset(samples, n_iter, region, p)
@@ -186,12 +188,14 @@ def mplot(samples=512, n_iter=MAXITER, region=None, p=0, colormap='Blues',
     # Graphic setup
     if savefig == True:
         sq = samples**2
-        name = 'mandelbrot_%d.png' % random.random()*1e4
+        suffix = random.randint(0,1e4)
+        name = 'mandelbrot_%d.png' % suffix
 
     # Actually plotting   
     plt.figure()
-    plt.setp(plt.gca(), xticks=[], yticks=[])
+    size = [samples/100.]*2
     plt.gcf().set_size_inches(size)
+    plt.setp(plt.gca(), xticks=[], yticks=[])
     plt.imshow(Z, origin='lower', cmap=colormap, extent=limits)
     plt.xlabel(r'$\Re{z}$'); plt.ylabel(r'$\Im{z}$')
     if savefig == True:
