@@ -53,10 +53,10 @@ for iter in range(4):
 In this example we use 7*pi/4 as argument to the main cardioid function. The resulting Julia set is shown here, with
 128, 256, 512 and 1024 iterations respectively.
 
-![Example 4a](https://i.imgsafe.org/20223c82f4.png)
+![Example 4a](../assets/example-4a.png?raw=true)
 
-![Example 4b](https://i.imgsafe.org/20224ed0e1.png)
+![Example 4b](../assets/example-4b.png?raw=true)
 
-![Example 4c](https://i.imgsafe.org/20226b45cc.png)
+![Example 4c](../assets/example-4c.png?raw=true)
 
-![Example 4d](https://i.imgsafe.org/20228be55e.png)
+![Example 4d](../assets/example-4d.png?raw=true)
