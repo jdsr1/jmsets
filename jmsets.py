@@ -100,7 +100,7 @@ def mandelbrot_set(region=None, width=64, height=64, maxiter=16):
 
 
 # Plotter for the set data
-def plotter(matrix, limits, colormap):
+def plotter(matrix, limits, colormap="Blues"):
     height, width = matrix.shape
     dpi = 96
     size = [width / dpi, height / dpi]
