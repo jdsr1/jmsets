@@ -6,6 +6,7 @@ from matplotlib import pyplot as plt
 
 # Get available colormaps
 colormaps = [cmap for cmap in plt.colormaps()]
+colormaps.sort()
 
 
 # Main cardiod complex value at angle alpha [rad]
@@ -19,7 +20,7 @@ def main_cardioid(alfa):
 
 
 # Julia set number of iterations
-def julia_iterations(z_0, c_param, maxiter=16):
+def julia_iterations(z_0, c_param, maxiter=64):
     boundary = (1 + np.sqrt(1 + 4 * np.abs(c_param)) ) / 2.0
     
     z_n = z_0**2 + c_param
@@ -31,7 +32,7 @@ def julia_iterations(z_0, c_param, maxiter=16):
 
 
 # Mandelbrot set number of iterations
-def mandelbrot_iterations(zvalue, maxiter=16):
+def mandelbrot_iterations(zvalue, maxiter=64):
     zvalue0 = zvalue
     for n in range(maxiter):
         if abs(zvalue) > 2:
@@ -42,7 +43,7 @@ def mandelbrot_iterations(zvalue, maxiter=16):
 
 
 # Return the matrix and (x,y) limits of the set
-def julia_set(c_param, region=None, width=64, height=64, maxiter=16):
+def julia_set(c_param, region=None, width=64, height=64, maxiter=64):
     if region is not None:
         point_x, point_y, delta_x, delta_y = region
         xmin = point_x - 0.5*delta_x
@@ -72,8 +73,8 @@ def julia_set(c_param, region=None, width=64, height=64, maxiter=16):
 
 
 # Returns the elements of the Mandelbrot set and their (x,y) limits
-def mandelbrot_set(region=None, width=64, height=64, maxiter=16):
-    if region != None:
+def mandelbrot_set(region=None, width=64, height=64, maxiter=64):
+    if region is not None:
         point_x, point_y, delta_x, delta_y = region
         xmin = point_x - 0.5*delta_x
         xmax = point_x + 0.5*delta_x
@@ -94,7 +95,8 @@ def mandelbrot_set(region=None, width=64, height=64, maxiter=16):
     for col, x in enumerate(x_samples):
         for row, y in enumerate(y_samples):
             z = complex(x, y)
-            z_samples[row, col] = mandelbrot_iterations(z, maxiter)
+            iterations = mandelbrot_iterations(z, maxiter)
+            z_samples[row, col] = iterations
     
     return z_samples, limits
 
@@ -104,10 +106,10 @@ def plotter(matrix, limits, colormap):
     height, width = matrix.shape
     dpi = 96
     size = [width / dpi, height / dpi]
-    fig, ax = plt.subplots()
-    fig.set_size_inches(size)
-    plt.axes(xticks=[], yticks=[], frameon=False)
-    
+
+    plt.figure()
+    plt.setp(plt.gca(), xticks=[], yticks=[])
+    plt.gcf().set_size_inches(size)
     plt.imshow(matrix, origin="lower", cmap=colormap, extent=limits)
     plt.show()
 
